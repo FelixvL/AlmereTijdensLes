@@ -1,15 +1,29 @@
 <script>
     function checkplaatje(){
         console.log("we zijn binnen");
-        tweedefunctie();
-        tweedefunctie();
-        tweedefunctie();
-        tweedefunctie();
-        tweedefunctie();
+     //   tweedefunctie(7);  // 7 is het argument
+     //   tweedefunctie(27);  // 27 is het argument
+        optellen(18, 24);
+        optellen(12, 16);
     }
-    function tweedefunctie(){
+    function optellen(cijfer1, cijfer2){   // WEL DRY
+        alert(cijfer1 + cijfer2);
+    }
+
+
+
+
+    function optellen2(cijfer2){   // NIET DRY
+        var getal1 = 9;
+        var getal2 = 24;
+        alert(getal1 + getal2);
+    }
+
+
+
+    function tweedefunctie( aantal ){   // parameter
         alert("in de tweede functie");
-        for(var x = 0; x<6; x++){
+        for(var x = 0; x<aantal; x++){
             console.log("in tweede functie "+ x);
         }
     }
