@@ -1,13 +1,18 @@
 <script>
+    var kiesmaar = function (){
+        alert("dit is die anonieme functie");
+    }
     function checkplaatje(keuze){
         console.log("we zijn binnen");
-        var uitkomst  = optellen(4, 2);
-        uitkomst = optellen(uitkomst , 29);
-        uitkomst = optellen(uitkomst, 9);
-        console.log(uitkomst);
-    //    felix.koekjeshalen().eten();
-    //    felix.koffiehalen().drinken();
-    //    felix.rondrennen();
+        kiesmaar = function (){
+            alert("totaal andere functionaliteit");
+        }
+        kiesmaar();
+        ffproberen(kiesmaar);
+
+    }
+    function ffproberen(jojo){
+        jojo();
     }
     function optellen(cijfer1, cijfer2){   // WEL DRY
         console.log("ik ben nu op regel 8");
