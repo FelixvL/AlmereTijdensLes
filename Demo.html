@@ -1,33 +1,21 @@
 <script>
     function checkplaatje(keuze){
         console.log("we zijn binnen");
-        if(keuze == "optellen"){
-            optellen(18, 24);
-        }else{
-            vermenigvuldigen(18, 24);
-        }
+        var uitkomst  = optellen(4, 2);
+        uitkomst = optellen(uitkomst , 29);
+        uitkomst = optellen(uitkomst, 9);
+        console.log(uitkomst);
+    //    felix.koekjeshalen().eten();
+    //    felix.koffiehalen().drinken();
+    //    felix.rondrennen();
     }
     function optellen(cijfer1, cijfer2){   // WEL DRY
-        alert(cijfer1 + cijfer2);
+        console.log("ik ben nu op regel 8");
+        return cijfer1 + cijfer2;
     }
     function vermenigvuldigen(cijfer1, cijfer2){
-        alert(cijfer1 * cijfer2);
+        return cijfer1 * cijfer2;
     }
-
-
-
-
-//    function optellen2(){   // NIET DRY
-//        var getal1 = 9;
-//        var getal2 = 24;
-//        alert(getal1 + getal2);
-//    }
- //   function tweedefunctie( aantal ){   // parameter
- //       alert("in de tweede functie");
- //       for(var x = 0; x<aantal; x++){
- //           console.log("in tweede functie "+ x);
-  //      }
- //   }
 </script>
 
 <input type=button onclick="checkplaatje('optellen')" value="optellen">
