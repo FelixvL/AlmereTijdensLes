@@ -1,29 +1,33 @@
-<script>
-    var kiesmaar = function (){
-        alert("dit is die anonieme functie");
-    }
-    function checkplaatje(keuze){
-        console.log("we zijn binnen");
-        kiesmaar = function (){
-            alert("totaal andere functionaliteit");
-        }
-        kiesmaar();
-        ffproberen(kiesmaar);
+typen
+DominiqueX
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
 
-    }
-    function ffproberen(jojo){
-        jojo();
-    }
-    function optellen(cijfer1, cijfer2){   // WEL DRY
-        console.log("ik ben nu op regel 8");
-        return cijfer1 + cijfer2;
-    }
-    function vermenigvuldigen(cijfer1, cijfer2){
-        return cijfer1 * cijfer2;
-    }
-</script>
+<body>
+        <input type="button" id="verder" value="next season" onclick="nextPic1()">
+<br>
+<br>
+    <script>
 
-<input type=button onclick="checkplaatje('optellen')" value="optellen">
-<input type=button onclick="checkplaatje('vermenigvuldigen')" value="vermenigvuldigen">
+        
+            function nextPic1() {
+                let r = 2;
+                if(r == 23){
+                  alert("het is 23");
+                }else if(r < 10){
+                  alert("dit is wel erg laag");
+                }else{
+                  alert("het is geen 23");
+                }
 
+            }
+   
+        </script>
 
+</body>
+</html>
