@@ -16,28 +16,16 @@ DominiqueX
 
         
             function nextPic1() {
-                let pen = {};
-                pen.kleur = "blauw";
-                pen.kleur = "groen";
-                pen.inkth = 24;
-                pen.lengte = 25;
-                console.log(pen);
-                let pen2 = {};
-                pen2.kleur = "paars";
-                pen2.inkth = 23;
-                pen2.lengte = 44;
-                schrijven(pen);
-                schrijven(pen);
-                schrijven(pen2);
-                schrijven(pen);
-                alert(pen2.inkth);
-            }
-            function schrijven(depen){
-                console.log(depen.kleur);
-                depen.inkth--;
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function (){
+                    alert("hij doet "+this.responseText);
+                    document.getElementById("dediv").innerHTML = this.responseText;
+                }
+                xhr.open("GET","http://nos.nl",true);
+                xhr.send();
             }
    
         </script>
-
+    <div id="dediv"></div>
 </body>
 </html>
