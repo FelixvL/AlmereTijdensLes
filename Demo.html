@@ -13,19 +13,26 @@ DominiqueX
 <br>
 <br>
     <script>
-
+            var r = 2;
         
             function nextPic1() {
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function (){
-                    alert("hij doet "+this.responseText);
-                    document.getElementById("dediv").innerHTML = this.responseText;
+                var alledivs = document.getElementsByClassName("dediv"+r);
+                for(var x = 0; x < alledivs.length; x++){
+                    alledivs[x].style.color = 'blue';
                 }
-                xhr.open("GET","http://nos.nl",true);
-                xhr.send();
             }
    
         </script>
-    <div id="dediv"></div>
+    <div class="dediv1">a</div>
+    <div class="dediv1">a</div>
+    <div class="dediv1">a</div>
+    <div class="dediv1">a</div>
+    <div class="dediv1">a</div>
+    <div class="dediv2">a</div>
+    <div class="dediv2">a</div>
+    <div class="dediv2">a</div>
+    <div class="dediv2">a</div>
+    <div class="dediv2">a</div>
+    <input type=button onclick=nextPic1()>
 </body>
 </html>
