@@ -4,12 +4,15 @@
 
     </style>
     <script>
+        var y = 0;       
         function raden(){
+
             var hetwoord = document.getElementById("invoer").value;
             console.log(hetwoord);
             for(var x=0; x < hetwoord.length; x++){
-                document.getElementById("h0b0").innerHTML = hetwoord[0];
+                document.getElementById("h"+y+"b"+x).innerHTML = hetwoord[x];
             }
+            y++;
         }
     </script>
 </head>
