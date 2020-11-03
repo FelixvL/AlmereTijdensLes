@@ -15,6 +15,9 @@
             var hetwoord = document.getElementById("invoer").value;
             console.log(hetwoord);
             var deElementen = document.getElementsByTagName("div");
+            for(var x = 0; x < deElementen.length; x++){
+                deElementen[x].innerHTML = "ck"+x;
+            }
         }
 
     </script>
