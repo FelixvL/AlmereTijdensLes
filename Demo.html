@@ -5,20 +5,23 @@
     </style>
     <script>
         function beginnen(){
-            var knop1 = document.getElementById("deknopzelf");
-            knop1.addEventListener('click',gewenstefunctie);
-            alert("originele functie");
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function (){
+                console.log("callback");
+                document.getElementById("deDiv").innerHTML = this.responseText;
+            };
+            console.log("als eerste of als tweede");
+            xhr.open("GET","http://nos.nl", true);
+           
+            xhr.send();
 
             
-        }
-        function gewenstefunctie(){
-            console.log("deze wil ik toekennen");
         }
     </script>
 </head>
 <body>
-    <input type="button" value="start" onclick=beginnen() id="deknopzelf">
-    <input type="button" value="tweede ronde" id=tweedeknop >
+    <input type="button" value="start" onclick=beginnen() >
+    <div id="deDiv"></div>
 
 </body>
 </html>
