@@ -1,16 +1,22 @@
 <html>
 <head>
     <style>
-
+        input{
+            background-color: red;
+        }
     </style>
     <script>
         function beginnen(){
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function (){
-                console.log("callback");
-		var obj = JSON.parse(this.responseText);
-		console.log(obj.text);
-                document.getElementById("deDiv").innerHTML = obj.text;
+		if(this.readyState == 4){
+                	alert("callback");
+			var obj = JSON.parse('{"hoogte":"25", "omschrijving":"it\'s vijf uur g\'wees"}');
+			console.log(obj.text);
+                	document.getElementById("deDiv").innerHTML = obj.text;
+		}else{
+			alert("verboden te praten");
+		}
 
             };
             console.log("als eerste of als tweede");
@@ -21,10 +27,11 @@
             
         }
     </script>
+    <link rel=stylesheet href=go.css >
 </head>
 <body>
     <input type="button" value="start" onclick=beginnen() >
-    <div id="deDiv"></div>
+    <div id="deDiv">abc</div>
 
 </body>
 </html>
