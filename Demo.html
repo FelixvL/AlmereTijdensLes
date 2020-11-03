@@ -8,6 +8,9 @@
             margin-top:50px;
             width: 200px;
             height:200px;
+            font-size: 35px;
+            color:red;
+            text-transform: uppercase;
         }
     </style>
     <script>
@@ -16,7 +19,7 @@
             console.log(hetwoord);
             var deElementen = document.getElementsByTagName("div");
             for(var x = 0; x < deElementen.length; x++){
-                deElementen[x].innerHTML = "ck"+x;
+                deElementen[x].innerHTML = hetwoord[x];
             }
         }
 
@@ -31,10 +34,10 @@
     <br>
     <br>
     <br>
-    <div>a</div>
-    <div>a</div>
-    <div>a</div>
-    <div>a</div>
-    <div>a</div>
+    <div>.</div>
+    <div>.</div>
+    <div>.</div>
+    <div>.</div>
+    <div>.</div>
 </body>
 </html>
