@@ -5,11 +5,11 @@
     </style>
     <script>
         function beginnen(){
-            var knop2 = document.getElementById("tweedeknop");
-            knop2.addEventListener('click',function(){
-                console.log("dit is in de anoniem functie");
-            });
-            knop2.addEventListener('mouseover', gewenstefunctie);
+            var knop1 = document.getElementById("deknopzelf");
+            knop1.addEventListener('click',gewenstefunctie);
+            alert("originele functie");
+
+            
         }
         function gewenstefunctie(){
             console.log("deze wil ik toekennen");
@@ -17,7 +17,7 @@
     </script>
 </head>
 <body>
-    <input type="button" value="start" onclick=beginnen()>
+    <input type="button" value="start" onclick=beginnen() id="deknopzelf">
     <input type="button" value="tweede ronde" id=tweedeknop >
 
 </body>
