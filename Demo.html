@@ -4,44 +4,21 @@
 
     </style>
     <script>
-        var y = 0;
-        var classes = ["eersterij","tweederij"];
-        function raden(){
-            var hetwoord = document.getElementById("invoer").value;
-            console.log(hetwoord);
-            var dehelerij = document.getElementsByClassName(classes[y]);
-            console.log(classes);
-            for(var x = 0; x<dehelerij.length; x++){
-                dehelerij[x].innerHTML = hetwoord[x];
-
-            }
-            y++;
+        function beginnen(){
+            var knop2 = document.getElementById("tweedeknop");
+            knop2.addEventListener('click',function(){
+                console.log("dit is in de anoniem functie");
+            });
+            knop2.addEventListener('mouseover', gewenstefunctie);
+        }
+        function gewenstefunctie(){
+            console.log("deze wil ik toekennen");
         }
     </script>
 </head>
 <body>
-    <input type="text" id="invoer">
-    <input type="button" value="raden" onclick=raden()>
+    <input type="button" value="start" onclick=beginnen()>
+    <input type="button" value="tweede ronde" id=tweedeknop >
 
-    <br>
-    <br>
-
-    <table border=1>
-        <tr>
-            <td class="eersterij">00</td>
-            <td class="eersterij">00</td>
-            <td class="eersterij">00</td>
-            <td class="eersterij">00</td>
-            <td class="eersterij">00</td>
-
-        </tr>
-        <tr>
-            <td class="tweederij">10</td>
-            <td class="tweederij">10</td>
-            <td class="tweederij">10</td>
-            <td class="tweederij">10</td>
-            <td class="tweederij">10</td>
-        </tr>
-    </table>
 </body>
 </html>
