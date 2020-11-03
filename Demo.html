@@ -8,10 +8,13 @@
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function (){
                 console.log("callback");
-                document.getElementById("deDiv").innerHTML = this.responseText;
+		var obj = JSON.parse(this.responseText);
+		console.log(obj.text);
+                document.getElementById("deDiv").innerHTML = obj.text;
+
             };
             console.log("als eerste of als tweede");
-            xhr.open("GET","http://nos.nl", true);
+            xhr.open("GET","https://cat-fact.herokuapp.com/facts/random", true);
            
             xhr.send();
 
