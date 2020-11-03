@@ -1,43 +1,40 @@
 <html>
 <head>
     <style>
-        div{
-            border:2px solid black;
-            display:inline;
-            padding:50px;
-            margin-top:50px;
-            width: 200px;
-            height:200px;
-            font-size: 35px;
-            color:red;
-            text-transform: uppercase;
-        }
+
     </style>
     <script>
         function raden(){
             var hetwoord = document.getElementById("invoer").value;
             console.log(hetwoord);
-            var deElementen = document.getElementsByTagName("div");
-            for(var x = 0; x < deElementen.length; x++){
-                deElementen[x].innerHTML = hetwoord[x];
+            for(var x=0; x < hetwoord.length; x++){
+                document.getElementById("h0b0").innerHTML = hetwoord[0];
             }
         }
-
     </script>
 </head>
 <body>
+    <input type="text" id="invoer">
+    <input type="button" value="raden" onclick=raden()>
+
     <br>
     <br>
-    <input type=text id=invoer>
-    <input type=button value=raden onclick=raden()>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div>.</div>
-    <div>.</div>
-    <div>.</div>
-    <div>.</div>
-    <div>.</div>
+
+    <table border=1>
+        <tr>
+            <td id="h0b0">00</td>
+            <td id="h0b1">01</td>
+            <td id="h0b2">02</td>
+            <td id="h0b3">03</td>
+            <td id="h0b4">04</td>
+        </tr>
+        <tr>
+            <td id="h1b0">10</td>
+            <td id="h1b1">11</td>
+            <td id="h1b2">12</td>
+            <td id="h1b3">13</td>
+            <td id="h1b4">14</td>
+        </tr>
+    </table>
 </body>
 </html>
