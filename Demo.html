@@ -4,13 +4,16 @@
 
     </style>
     <script>
-        var y = 0;       
+        var y = 0;
+        var classes = ["eersterij","tweederij"];
         function raden(){
-
             var hetwoord = document.getElementById("invoer").value;
             console.log(hetwoord);
-            for(var x=0; x < hetwoord.length; x++){
-                document.getElementById("h"+y+"b"+x).innerHTML = hetwoord[x];
+            var dehelerij = document.getElementsByClassName(classes[y]);
+            console.log(classes);
+            for(var x = 0; x<dehelerij.length; x++){
+                dehelerij[x].innerHTML = hetwoord[x];
+
             }
             y++;
         }
@@ -25,18 +28,19 @@
 
     <table border=1>
         <tr>
-            <td id="h0b0">00</td>
-            <td id="h0b1">01</td>
-            <td id="h0b2">02</td>
-            <td id="h0b3">03</td>
-            <td id="h0b4">04</td>
+            <td class="eersterij">00</td>
+            <td class="eersterij">00</td>
+            <td class="eersterij">00</td>
+            <td class="eersterij">00</td>
+            <td class="eersterij">00</td>
+
         </tr>
         <tr>
-            <td id="h1b0">10</td>
-            <td id="h1b1">11</td>
-            <td id="h1b2">12</td>
-            <td id="h1b3">13</td>
-            <td id="h1b4">14</td>
+            <td class="tweederij">10</td>
+            <td class="tweederij">10</td>
+            <td class="tweederij">10</td>
+            <td class="tweederij">10</td>
+            <td class="tweederij">10</td>
         </tr>
     </table>
 </body>
