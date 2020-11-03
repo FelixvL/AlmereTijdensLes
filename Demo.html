@@ -1,38 +1,37 @@
-typen
-DominiqueX
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-
-<body>
-        <input type="button" id="verder" value="next season" onclick="nextPic1()">
-<br>
-<br>
+<html>
+<head>
+    <style>
+        div{
+            border:2px solid black;
+            display:inline;
+            padding:50px;
+            margin-top:50px;
+            width: 200px;
+            height:200px;
+        }
+    </style>
     <script>
-            var r = 2;
-        
-            function nextPic1() {
-                var alledivs = document.getElementsByClassName("dediv"+r);
-                for(var x = 0; x < alledivs.length; x++){
-                    alledivs[x].style.color = 'blue';
-                }
-            }
-   
-        </script>
-    <div class="dediv1">a</div>
-    <div class="dediv1">a</div>
-    <div class="dediv1">a</div>
-    <div class="dediv1">a</div>
-    <div class="dediv1">a</div>
-    <div class="dediv2">a</div>
-    <div class="dediv2">a</div>
-    <div class="dediv2">a</div>
-    <div class="dediv2">a</div>
-    <div class="dediv2">a</div>
-    <input type=button onclick=nextPic1()>
+        function raden(){
+            var hetwoord = document.getElementById("invoer").value;
+            console.log(hetwoord);
+            var deElementen = document.getElementsByTagName("div");
+        }
+
+    </script>
+</head>
+<body>
+    <br>
+    <br>
+    <input type=text id=invoer>
+    <input type=button value=raden onclick=raden()>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
 </body>
 </html>
