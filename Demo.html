@@ -1,37 +1,29 @@
 <html>
 <head>
+    <script src=jquery.js></script>
     <style>
-        input{
-            background-color: red;
+        div{
+            color:red;
+            font-size: 40;
+            background-color: green;
         }
     </style>
     <script>
-        function beginnen(){
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function (){
-		if(this.readyState == 4){
-                	alert("callback");
-			var obj = JSON.parse('{"hoogte":"25", "omschrijving":"it\'s vijf uur g\'wees"}');
-			console.log(obj.text);
-                	document.getElementById("deDiv").innerHTML = obj.text;
-		}else{
-			alert("verboden te praten");
-		}
-
-            };
-            console.log("als eerste of als tweede");
-            xhr.open("GET","https://cat-fact.herokuapp.com/facts/random", true);
-           
-            xhr.send();
-
-            
+        function proberen(){
+            $('.deDiv').fadeOut(3000);
         }
     </script>
-    <link rel=stylesheet href=go.css >
 </head>
 <body>
-    <input type="button" value="start" onclick=beginnen() >
-    <div id="deDiv">abc</div>
+    <input type=button value=startjquery onclick="proberen()">
+    <div class="deDiv">abc</div>
+    <div class="deDiv">abc</div>
+    <div class="deDiv">abc</div>
+    <div class="deDiv">abc</div>
+    <div class="deDiv">abc</div>
+    <div class="deDiv">abc</div>
+    <div class="deDiv">abc</div>
+    <div class="deDiv">abc</div>
 
 </body>
 </html>
