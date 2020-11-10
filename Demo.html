@@ -4,53 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        td{
-            width: 70px;
-            height: 70px;
-            border:2px solid black;
-        }
-    </style>
-    <script>
-        var dezee = [0, 0, 0, 1, 1, 1, 0];
-        var geschoten = [0, 0, 0, 0, 0, 0, 0];
-
-        function schieten(blokjesid){
-            geschoten[blokjesid] = 1;
-            console.log(geschoten);
-            deZeeKleuren();
-        }
-
-        window.onload = function (){
-            deZeeKleuren();
-        }
-        function deZeeKleuren(){
-            var tegeltjes = document.getElementsByClassName("zee");
-            console.log(tegeltjes);
-            for(var x = 0 ; x < tegeltjes.length ; x++){
-                if(geschoten[x] != 0){
-                    if(dezee[x] == 0){
-                        tegeltjes[x].style.backgroundColor = 'blue'; 
-                    }else{
-                        tegeltjes[x].style.backgroundColor = 'red'; 
-                    }
-                }else{
-                    tegeltjes[x].style.backgroundColor = 'white'; 
-                } 
-            }    
-        }
-    </script>
 </head>
+<script>
+    var alleVakjes;
+    var teller = 0;
+    var dekleuren = ["red","blue","green"];
+    var kleurteller = 0;
+    var richting = true;
+    window.onload = function(){
+        setInterval(vakjesKleuren, 150);
+        alleVakjes = document.getElementsByTagName("td");
+
+    }
+    function vakjesKleuren(){
+        console.log(teller);
+        for(var x = 0; x < alleVakjes.length ; x++){
+            alleVakjes[x].style.backgroundColor = 'white';
+        }
+        alleVakjes[teller].style.backgroundColor = dekleuren[kleurteller];
+        if(richting){
+            teller++;
+        }else{
+            teller--;
+        }
+        if(teller >= alleVakjes.length || teller <= 0){
+//            teller = 0;
+
+            teller--;
+            if(teller <= 0){
+                teller = 0;
+            }
+            richting = !richting;
+            console.log(richting);
+            kleurteller ++;
+            if(kleurteller >= dekleuren.length){
+                kleurteller = 0;
+            }
+
+        }
+    }
+</script>
+<style>
+    td{
+        width: 100px;
+        height: 100px;
+        border: 2px solid red;
+    }
+</style>
 <body>
     <table>
         <tr>
-            <td class=zee onclick="schieten(0)"></td>
-            <td class=zee onclick="schieten(1)"></td>
-            <td class=zee onclick="schieten(2)"></td>
-            <td class=zee onclick="schieten(3)"></td>
-            <td class=zee onclick="schieten(4)"></td>
-            <td class=zee onclick="schieten(5)"></td>
-            <td class=zee onclick="schieten(6)"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
     </table>
 </body>
