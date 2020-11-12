@@ -9,13 +9,29 @@
         window.onload = function (){
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
-            const product = urlParams.get('idrecept')
-            alert(product);
+            const idrec = urlParams.get('idrecept')
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function (){
+                if(this.readyState == 4){
+                    var hetRecept = JSON.parse(this.responseText);
+                    toonRecept(hetRecept);
+                }
+            }
+            xhr.open("GET", "http://161.97.73.14:3000/get/recipes/"+idrec, true);
+            xhr.send();
+
+
+
+        }
+
+        function toonRecept(recept){
+            console.log(recept);
+            document.getElementById("naamRecept").innerHTML = recept[0].recipe_name;
         }
     </script>
 </head>
 <body>
-
+    <h1 id=naamRecept></h1>
     
     <span>
         <div></div>
