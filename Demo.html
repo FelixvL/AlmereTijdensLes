@@ -4,66 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src=mijnscript.js></script>
 </head>
-<script>
-    var alleVakjes;
-    var teller = 0;
-    var dekleuren = ["red","blue","green"];
-    var kleurteller = 0;
-    var richting = true;
-    window.onload = function(){
-        setInterval(vakjesKleuren, 150);
-        alleVakjes = document.getElementsByTagName("td");
-
-    }
-    function vakjesKleuren(){
-        console.log(teller);
-        for(var x = 0; x < alleVakjes.length ; x++){
-            alleVakjes[x].style.backgroundColor = 'white';
-        }
-        alleVakjes[teller].style.backgroundColor = dekleuren[kleurteller];
-        if(richting){
-            teller++;
-        }else{
-            teller--;
-        }
-        if(teller >= alleVakjes.length || teller <= 0){
-//            teller = 0;
-
-            teller--;
-            if(teller <= 0){
-                teller = 0;
-            }
-            richting = !richting;
-            console.log(richting);
-            kleurteller ++;
-            if(kleurteller >= dekleuren.length){
-                kleurteller = 0;
-            }
-
-        }
-    }
-</script>
-<style>
-    td{
-        width: 100px;
-        height: 100px;
-        border: 2px solid red;
-    }
-</style>
 <body>
-    <table>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+
+    
+    <span>
+        <div></div>
+    </span>
+
+
 </body>
 </html>
