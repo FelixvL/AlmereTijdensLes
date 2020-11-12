@@ -30,8 +30,6 @@
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function (){
                 if(this.readyState == 4){
-                    var dedebug = document.getElementById("debug");
-                    dedebug.innerHTML = this.responseText;
                     var antwoordObject = JSON.parse(this.responseText);
                     tabelOpbouwen(antwoordObject);
                 }
