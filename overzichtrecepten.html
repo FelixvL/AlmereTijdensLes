@@ -49,6 +49,25 @@
             }
            document.getElementById("table1").innerHTML = tabelHTML;
         }
+        function toevoegenrecept(){
+            var recept = {};
+            recept.recipe_name = document.getElementById("naam").value;
+            recept.portion_size = document.getElementById("apers").value;
+            recept.prep_time = document.getElementById("bereidingstijd").value;
+            recept.imgbase = "abc";
+            var receptJSON = JSON.stringify(recept);
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function (){
+                
+                if(this.readyState == 4){
+                    console.log("toegevoegd");
+                    location.reload();
+                }
+            }
+            xhr.open("POST","http://161.97.73.14:3000/post/recipes",true);
+            xhr.setRequestHeader("Content-Type","application/json");
+            xhr.send(receptJSON);
+        }
     </script>
 </head>
 <body>
@@ -60,7 +79,10 @@
 
 Overzicht recepten
 <hr>
-Naam: <input type="text" id=naam> AantalPersonen: <input type="text" id=apers> Bereidingstijd: <input type="text" id=bereidingstijd><input type="button" value="toevoegen">
+Naam: <input type="text" id=naam> 
+AantalPersonen: <input type="text" id=apers> 
+Bereidingstijd: <input type="text" id=bereidingstijd>
+<input type="button" value="toevoegen" onclick=toevoegenrecept()>
 <hr>
 <table border=2 id="table1">
 
