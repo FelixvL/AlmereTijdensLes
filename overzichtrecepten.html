@@ -29,12 +29,23 @@
         window.onload = function(){
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function (){
-                console.log(this);
-                alert("we zijn er"+ this.responseText);
-                var antwoordObject = JSON.parse(this.responseText);
+                if(this.readyState == 4){
+                    var antwoordObject = JSON.parse(this.responseText);
+                    tabelOpbouwen(antwoordObject);
+                }
             };
             xhr.open("GET" , "http://161.97.73.14:3000/get/recipes", true );
             xhr.send();
+
+        }
+        function tabelOpbouwen(tabeldata){
+            var tabelHTML = " <tr><th>Naam</th><th>Aantal Personen</th><th>Bereidingstijd</th><th>Ingredienten</th><th>wijzig</th><th>verwijder</th></tr>";
+            for(var x = 0 ; x < tabeldata.length ; x++){
+                var go = tabeldata[x].recipe_name;
+                tabelHTML += "<tr><td>"+tabeldata[x].recipe_name+"</td><td>6 personen</td><td>10 minuten</td><td>3</td><td>bereidingswijze: dsfasdf</td><td>Fred</td></tr>";
+
+            }
+            document.getElementById("table1").innerHTML = tabelHTML;
         }
     </script>
 </head>
