@@ -25,6 +25,18 @@
             height: 150px;
         }
     </style>
+    <script>
+        window.onload = function(){
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function (){
+                console.log(this);
+                alert("we zijn er"+ this.responseText);
+                var antwoordObject = JSON.parse(this.responseText);
+            };
+            xhr.open("GET" , "http://161.97.73.14:3000/get/recipes", true );
+            xhr.send();
+        }
+    </script>
 </head>
 <body>
     <table id="table2">
@@ -35,11 +47,16 @@
 
 Overzicht recepten
 <table border=2 id="table1">
+
+
     <tr><th>Naam</th><th>Aantal Personen</th><th>Bereidingstijd</th><th>Ingredienten</th><th>wijzig</th><th>verwijder</th></tr>
     <tr><td><a href="detailsrecepten.html?idrecept=3">Pasta</a></td><td>6 personen</td><td>10 minuten</td><td>3</td><td>bereidingswijze: dsfasdf</td><td>Fred</td></tr>
     <tr><td><a href="detailsrecepten.html?idrecept=5">Roti</a></td><td>6 personen</td><td>10 minuten</td><td>3</td><td>bereidingswijze: dsfasdf</td><td>Fred</td></tr>
     <tr><td>Bami</td><td>6 personen</td><td>10 minuten</td><td>3</td><td>bereidingswijze: dsfasdf</td><td>Fred</td></tr>
     <tr><td>Nasi</td><td>6 personen</td><td>10 minuten</td><td>3</td><td>bereidingswijze: dsfasdf</td><td>Fred</td></tr>
+
+
+
 </table>
 
 </body>
