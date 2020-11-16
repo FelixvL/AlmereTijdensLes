@@ -16,10 +16,22 @@
         function proberen(){
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function (){
-                alert(this.responseText);
+                if(this.readyState == 4){
+                    alert(this.responseText);
+
+                }
             }
             xhr.open("GET","https://cat-fact.herokuapp.com/facts/random",true);
             xhr.send();
+            var xhr2 = new XMLHttpRequest();
+            xhr2.onreadystatechange = function (){
+                if(this.readyState == 4){
+                    alert(this.responseText);
+                    
+                }
+            }
+            xhr2.open("GET","https://cat-fact.herokuapp.com/facts/random",true);
+            xhr2.send();
         }
     </script>
     <style>
