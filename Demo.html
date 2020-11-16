@@ -6,13 +6,13 @@
     <title>Document</title>
     <script>
         function functie1(){
-            
-            console.log("functie1");
-            //functie2();  // optie 1
-           // document.getElementById("meerdere").addEventListener("click",functie2); // optie2
-        }
-        function functie2(){
-            console.log("functie2");
+            var depage = document.getElementById("depagina");
+            depage.style.visibility = "visible";
+            depage.style.color = 'red';
+            depage.style.fontSize = "50px";
+            depage.style.border = "4px dashed green";
+            var debutton = document.getElementById("deknop");
+            debutton.style.visibility = "hidden";
         }
     </script>
     <style>
@@ -20,11 +20,9 @@
     </style>
 </head>
 <body>
-    <input type="text">
-    <input type="text" onfocus="functie1()" onblur="functie2()" value="deze">
-    <input type="checkbox">
-    <input type="button" onclick="functie1();functie2();" value="meerdere" id="meerdere">
-    <input type="radio">
-    <input type="text">
+    <input type="button" onclick="functie1();" value="meerdere" id="deknop">
+    <div style="visibility: hidden;" id="depagina">
+        vanalles
+    </div>
 </body>
 </html>
