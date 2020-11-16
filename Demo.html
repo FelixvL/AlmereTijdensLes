@@ -5,38 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function functie1(abc){
-            var depage = document.getElementById("depagina");
-            depage.style.visibility = "visible";
-            depage.style.color = 'red';
-            depage.style.fontSize = "50px";
-            depage.style.border = "4px dashed green";
-          //  abc.style.visibility = "hidden";
-          abc.style.backgroundColor = 'blue';
-          abc.style.display = "none";
+        function functie1(){
+            var test = document.getElementById("deknop");
+            try{
+            proberen();
+            }catch(e){
+                alert("er ging iets mis");
+            }
+            console.log("einde");
         }
-
-        function functie2(){
-            var depage = 8;          
-            alert(depage * depage);
-            depage++;
+        function proberen(){
+            throw new Error("dit is mijn eigen error");
         }
     </script>
     <style>
-        #depagina{
-            visibility: hidden;
+        #check{
+            position : absolute;
+            left:40%;
+            top:40%;
+            z-index: ;
         }
     </style>
 </head>
 <body>
-    <input type="button" onclick="functie1(this);" value="meerderea" id="deknop">
-    <input type="button" onclick="functie1(this);" value="meerdereb" id="deknop">
-    <input type="button" onclick="functie1(this);" value="meerderec" id="deknop">
-    <input type="button" onclick="functie1(this);" value="meerdered" id="deknop">
-    <input type="button" onclick="functie1(this);" value="meerderee" id="deknop">
-    <input type="button" onclick="functie2();" value="vermenigvuldigen" id="deknop">
-    <div id="depagina">
-        vanalles
-    </div>
+    <input type="button" onclick="functie1();" value="starten" id="deknop">
+    Hier is wat tekst <mark>en dit is fel</mark> en dit erna<br>
+    <input type=button id=check value="Klik hier">
 </body>
 </html>
