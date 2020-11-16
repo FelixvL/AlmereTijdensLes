@@ -18,20 +18,13 @@
             xhr.onreadystatechange = function (){
                 if(this.readyState == 4){
                     alert(this.responseText);
-
+                    var mijnobj = JSON.parse(this.responseText);
+                    document.getElementById("resultaat").innerHTML = mijnobj.text;
                 }
             }
             xhr.open("GET","https://cat-fact.herokuapp.com/facts/random",true);
             xhr.send();
-            var xhr2 = new XMLHttpRequest();
-            xhr2.onreadystatechange = function (){
-                if(this.readyState == 4){
-                    alert(this.responseText);
-                    
-                }
-            }
-            xhr2.open("GET","https://cat-fact.herokuapp.com/facts/random",true);
-            xhr2.send();
+            
         }
     </script>
     <style>
@@ -45,7 +38,7 @@
 </head>
 <body>
     <input type="button" onclick="proberen();" value="starten" id="deknop">
-    Hier is wat tekst <mark>en dit is fel</mark> en dit erna<br>
+    Hier is wat tekst <mark id=resultaat>en dit is fel</mark> en dit erna<br>
     <input type=button id=check value="Klik hier">
 </body>
 </html>
