@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src=mijnscript.js></script>
+    <script>
+        function functie1(){
+            
+            console.log("functie1");
+            //functie2();  // optie 1
+           // document.getElementById("meerdere").addEventListener("click",functie2); // optie2
+        }
+        function functie2(){
+            console.log("functie2");
+        }
+    </script>
+    <style>
+
+    </style>
 </head>
 <body>
-
-    
-    <span>
-        <div></div>
-    </span>
-
-
+    <input type="text">
+    <input type="text" onfocus="functie1()" onblur="functie2()" value="deze">
+    <input type="checkbox">
+    <input type="button" onclick="functie1();functie2();" value="meerdere" id="meerdere">
+    <input type="radio">
+    <input type="text">
 </body>
 </html>
