@@ -5,23 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function functie1(){
+        function functie1(abc){
             var depage = document.getElementById("depagina");
             depage.style.visibility = "visible";
             depage.style.color = 'red';
             depage.style.fontSize = "50px";
             depage.style.border = "4px dashed green";
-            var debutton = document.getElementById("deknop");
-            debutton.style.visibility = "hidden";
+          //  abc.style.visibility = "hidden";
+          abc.style.backgroundColor = 'blue';
+          abc.style.display = "none";
+        }
+
+        function functie2(){
+            var depage = 8;          
+            alert(depage * depage);
+            depage++;
         }
     </script>
     <style>
-
+        #depagina{
+            visibility: hidden;
+        }
     </style>
 </head>
 <body>
-    <input type="button" onclick="functie1();" value="meerdere" id="deknop">
-    <div style="visibility: hidden;" id="depagina">
+    <input type="button" onclick="functie1(this);" value="meerderea" id="deknop">
+    <input type="button" onclick="functie1(this);" value="meerdereb" id="deknop">
+    <input type="button" onclick="functie1(this);" value="meerderec" id="deknop">
+    <input type="button" onclick="functie1(this);" value="meerdered" id="deknop">
+    <input type="button" onclick="functie1(this);" value="meerderee" id="deknop">
+    <input type="button" onclick="functie2();" value="vermenigvuldigen" id="deknop">
+    <div id="depagina">
         vanalles
     </div>
 </body>
