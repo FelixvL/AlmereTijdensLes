@@ -5,49 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        function Gebouw(aantalV, aantalM, kleur){    // prototype  class  constructor
+            this.aantalVerdiepingen = aantalV;
+            this.aantalMuren = aantalM;
+            this.kleurVanGebouw = kleur;
+        }
+        function Person(first, last, age, eyecolor, tcolor) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eyecolor;
+            this.truikleur = tcolor;
+        }
         function functie1(){
-            var mijnobject = {
-                achternaam:'fritsen'
-            };
-            mijnobject.naam = "Johan";
-            var moJSON = JSON.stringify(mijnobject);
-            alert(moJSON);
+            var myFather = new Person("John", "Doe", 50, "blue");
+            var myMother = new Person("Sally", "Rally", 48, "green");
+            console.log( "========" );
+            var onsgebouw = new Gebouw(2, 9, "oranje");
+            var onsgebouwTwee = new Gebouw(22, 4, "blauw");
+            var onsgebouwTwee2 = new Gebouw(22, 4, "blauw");
+            var onsgebouwTwee3 = new Gebouw(22, 4, "blauw");
+            var onsgebouwTwee4 = new Gebouw(22, 4, "blauw");
+            onsgebouw.trappen = 24;
+            Gebouw.prototype.ramen = 25;
+            console.log(onsgebouw.trappen);
+            console.log(onsgebouwTwee.trappen);
+            console.log(onsgebouw.ramen);
+            console.log(onsgebouwTwee.ramen);
+            console.log(onsgebouwTwee2.ramen);
+            console.log(onsgebouwTwee3.ramen);
+            console.log(onsgebouwTwee4.ramen);
         }
-        function proberen(){
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function (){
-                if(this.readyState == 4){
-                    alert(this.responseText);
-                    var mijnobj = JSON.parse(this.responseText);
-                    document.getElementById("resultaat1").innerHTML = mijnobj.type;
-                    document.getElementById("resultaat2").innerHTML = mijnobj.user;
-                    document.getElementById("resultaat3").innerHTML = mijnobj.createdAt;
-                    document.getElementById("resultaat4").innerHTML = mijnobj.text;
-                    document.getElementById("resultaat5").innerHTML = mijnobj.updatedAt;
-                    console.log(mijnobj);
-                }
-            }
-            xhr.open("GET","https://cat-fact.herokuapp.com/facts/random",true);
-            xhr.send();
-            
-        }
+        
+
     </script>
     <style>
-        #check{
-            position : absolute;
-            left:40%;
-            top:40%;
-            z-index: ;
-        }
     </style>
 </head>
 <body>
-    <input type="button" onclick="proberen();" value="starten" id="deknop">
-    Hier is wat tekst <mark id=resultaat1>en dit is fel</mark> en dit erna<br>
-    Hier is wat tekst <mark id=resultaat2>en dit is fel</mark> en dit erna<br>
-    Hier is wat tekst <mark id=resultaat3>en dit is fel</mark> en dit erna<br>
-    Hier is wat tekst <mark id=resultaat4>en dit is fel</mark> en dit erna<br>
-    Hier is wat tekst <mark id=resultaat5>en dit is fel</mark> en dit erna<br>
-    <input type=button id=check value="Klik hier">
+    <input type=button id=check value="Klik hier"   onclick=functie1()>
 </body>
 </html>
