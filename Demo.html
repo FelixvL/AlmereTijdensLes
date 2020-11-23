@@ -5,44 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function Gebouw(aantalV, aantalM, kleur){    // prototype  class  constructor
-            this.aantalVerdiepingen = aantalV;
-            this.aantalMuren = aantalM;
-            this.kleurVanGebouw = kleur;
+        var mijnVar = mijnVar || {};
+        mijnVar.Auto = function(kleur, hoogte,snelheid){
+            this.kleurf = kleur;
+            this.hoogtef = hoogte;
+            this.snelheidf = snelheid;
+            this.versnellen = function(){
+                var returnString = '';
+                console.log("ff testen");
+                for(var property in this){
+                    console.log(property);
+                    console.log(this[property]);
+                    returnString += "De kleur is: "+this[property];
+                }
+                return returnString;
+            }
+        };
+
+        function test(){
+            var deAuto = new mijnVar.Auto('rood', 120, 50);
+            console.log(deAuto.versnellen());
         }
-        function Person(first, last, age, eyecolor, tcolor) {
-            this.firstName = first;
-            this.lastName = last;
-            this.age = age;
-            this.eyeColor = eyecolor;
-            this.truikleur = tcolor;
-        }
-        function functie1(){
-            var myFather = new Person("John", "Doe", 50, "blue");
-            var myMother = new Person("Sally", "Rally", 48, "green");
-            console.log( "========" );
-            var onsgebouw = new Gebouw(2, 9, "oranje");
-            var onsgebouwTwee = new Gebouw(22, 4, "blauw");
-            var onsgebouwTwee2 = new Gebouw(22, 4, "blauw");
-            var onsgebouwTwee3 = new Gebouw(22, 4, "blauw");
-            var onsgebouwTwee4 = new Gebouw(22, 4, "blauw");
-            onsgebouw.trappen = 24;
-            Gebouw.prototype.ramen = 25;
-            console.log(onsgebouw.trappen);
-            console.log(onsgebouwTwee.trappen);
-            console.log(onsgebouw.ramen);
-            console.log(onsgebouwTwee.ramen);
-            console.log(onsgebouwTwee2.ramen);
-            console.log(onsgebouwTwee3.ramen);
-            console.log(onsgebouwTwee4.ramen);
-        }
-        
 
     </script>
-    <style>
-    </style>
 </head>
 <body>
-    <input type=button id=check value="Klik hier"   onclick=functie1()>
+    <input type="button" onclick=test()>
 </body>
 </html>
