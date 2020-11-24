@@ -5,31 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var mijnVar = {};
-        mijnVar.Auto = function(kleur, hoogte,snelheid){
-            this.kleurf = kleur;
-            this.hoogtef = hoogte;
-            this.snelheidf = snelheid;
-        };
-        mijnVar.Auto.prototype = {
-            versnellen:function(){
-                var returnString = '';
-                console.log("ff testen");
-                for(var property in this){
-                    console.log(this.hoogtef);
-                    console.log(property);
+        function getallerecepten(){
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                console.log(this.responseText);
+                    if(this.readyState == 4){
+                        var antwoordOBJ = JSON.parse(this.responseText)
+                        voerFunctieUit(antwoordOBJ);
                 }
-                return returnString;
-            }
+            };
+            xhr.open("GET","http://161.97.73.14:3000/get/recipes", true);
+            xhr.send();
         }
-        function test(){
-            var Audi = new mijnVar.Auto('audi', 135, 55);
-            Audi.versnellen();
+        function voerFunctieUit(result){
+            var eindString = "";
+            for(var x = 0; x < result.length; x++){
+                eindString += '<div class="recept">naam recept</div>'
+                    }
+            document.getElementById("uitkomst").innerHTML = eindString;
         }
-
     </script>
+    <style>
+        .recept{
+            padding : 12px;
+            font-size: large;
+            color : blue;
+            border : 3px solid red;
+        }
+    </style>
 </head>
 <body>
-    <input type="button" onclick=test()>
+    <input type="button" onclick="getallerecepten()" value="alle recepten">
+    <div id=uitkomst></div>
 </body>
 </html>
