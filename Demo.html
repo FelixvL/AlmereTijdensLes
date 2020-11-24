@@ -20,8 +20,8 @@
         function voerFunctieUit(result){
             var eindString = "";
             for(var x = 0; x < result.length; x++){
-                eindString += '<div class="recept">naam recept</div>'
-                    }
+                eindString += '<div class="recept">'+result[x].recipe_name+'</div>';
+            }
             document.getElementById("uitkomst").innerHTML = eindString;
         }
     </script>
@@ -36,6 +36,9 @@
 </head>
 <body>
     <input type="button" onclick="getallerecepten()" value="alle recepten">
-    <div id=uitkomst></div>
+    <div id=uitkomst>
+        
+
+    </div>
 </body>
 </html>
