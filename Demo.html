@@ -20,7 +20,7 @@
         function voerFunctieUit(result){
             var eindString = "";
             for(var x = 0; x < result.length; x++){
-                eindString += '<div class="recept">'+result[x].recipe_name+'</div>';
+                eindString += '<div class="recept" ><a href=receptdetail.html?receptid='+result[x].id+'>'+result[x].recipe_name+'</div>';
             }
             document.getElementById("uitkomst").innerHTML = eindString;
         }
